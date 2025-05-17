@@ -12,7 +12,6 @@
       height: 100%;
     }
 
-
     body {
       background: url('https://images.unsplash.com/photo-1556388275-bb5585725aca?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
       background-size: cover;
@@ -20,13 +19,11 @@
       font-family: sans-serif;
     }
 
-
     h1, h2, h3 {
       background: #ffffff;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-
 
     .black-box {
       background-color: rgba(0, 0, 0, 0.7);
@@ -39,43 +36,39 @@
 </head>
 <body>
 
-
   <!-- Navbar -->
   <nav class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/90 border-b border-gray-800 shadow-md px-8 py-4 flex justify-between items-center text-lg font-semibold">
     <div class="text-white">NAVI</div>
     <div class="space-x-8">
-      <a href="/" class="text-white hover:text-gray-400 transition">How It Works</a>
-      <a href="/get-started" class="text-white hover:text-gray-400 transition">Our Mission</a>
-      <a href="/demo" class="text-white hover:text-gray-400 transition">Demo</a>
+      <a href="#how-it-works" class="text-white hover:text-gray-400 transition">How It Works</a>
+      <a href="GetStarted.html" class="text-white hover:text-gray-400 transition">Get Started</a>
+      <a href="Demo.html" class="text-white hover:text-gray-400 transition">Demo</a>
     </div>
   </nav>
-
 
   <!-- Page Container -->
   <div>
 
-
     <!-- Hero Section -->
     <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24">
-      <h1 class="text-5xl md:text-6xl font-bold tracking-tight text-white">NAVI</h1>
-      <p class="mt-6 text-lg md:text-xl max-w-xl text-gray-300">
+      <h1 class="text-5xl md:text-8xl font-bold tracking-tight text-white">NAVI</h1>
+      <p class="mt-6 text-lg md:text-xl max-w-xl text-gray-300 bg-black bg-opacity-50 p-4 rounded-lg">
         Control your screen with a sound. A nod. A glance. The future is filled with motion.
       </p>
     </section>
 
-
     <!-- How It Works -->
-    <section id="how" class="min-h-screen flex flex-col justify-center items-center px-6 text-center">
+    <section id="how-it-works" class="pt-40 min-h-screen flex flex-col justify-center items-center px-6 text-center text-white">
       <h2 class="text-4xl font-bold mb-6">How It Works</h2>
-      <div class="black-box text-white text-lg">
-        NAVI uses AI-powered motion and voice detection to track and interpret your head gestures and voice commands in real time, giving you contactless, yet seamless control over your device.
+    
+      <div class="text-lg black-box text-white text-lg max-w-2xl mb-10">
+        NAVI uses AI-powered motion and voice detection to track and interpret your head gestures and voice commands in real time, giving you contactless yet seamless control over your device.
       </div>
-      <div class="mt-12 flex flex-wrap justify-center gap-6 max-w-5xl">
-        <img src="https://plus.unsplash.com/premium_photo-1710695885107-fb4e3d532a9a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0" class="rounded-lg shadow-md w-80 object-cover">
-        <img src="https://images.unsplash.com/photo-1674027444485-cec3da58eef4?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0" class="rounded-lg shadow-md w-80 object-cover">
+      <div class="flex flex-wrap justify-center gap-6 max-w-5xl">
+        <img src="https://plus.unsplash.com/premium_photo-1710695885107-fb4e3d532a9a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0" alt="Gesture Control" class="rounded-lg shadow-lg w-80 object-cover"/>
+        <img src="https://images.unsplash.com/photo-1674027444485-cec3da58eef4?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0" alt="Voice Interface" class="rounded-lg shadow-lg w-80 object-cover"/>
       </div>
     </section>
-
 
     <!-- Features -->
     <section id="features" class="min-h-screen flex flex-col justify-center items-center px-6 text-center">
@@ -96,7 +89,6 @@
       </div>
     </section>
 
-
     <!-- Future Section -->
     <section id="future" class="min-h-screen flex flex-col justify-center items-center px-6 text-center">
       <h2 class="text-4xl font-bold mb-6">Where We're Going</h2>
@@ -108,19 +100,18 @@
       </div>
     </section>
 
-
     <!-- CTA -->
     <section id="cta" class="min-h-screen flex flex-col justify-center items-center text-center px-6">
       <h2 class="text-4xl font-bold mb-4">Touch the Future — Without Touch</h2>
       <div class="black-box text-white text-lg">
         Ready to step into the future of motion and voice-activated control? Click 'Get Started' to begin your journey with NAVI!
       </div>
-      <button class="mt-4 bg-[#4f4d4d] text-white px-6 py-3 rounded-full hover:bg-[#828282] transition">
-        Get Started
-      </button>
+      <a href="naviExecution.html">
+        <button class="mt-4 bg-[#4f4d4d] text-white px-6 py-3 rounded-full hover:bg-[#828282] transition">
+          Get Started
+        </button>
+      </a>
     </section>
-
-
   </div>
 </body>
 </html>
