@@ -1,0 +1,9 @@
+flask
+opencv-python
+face-recognition
+numpy
+pyautogui
+PyAudio
+SpeechRecognition
+selenium
+google-generativeai
