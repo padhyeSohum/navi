@@ -6,6 +6,8 @@ import os
 import uuid
 import base64
 import re
+from voiceProcessing import main as voice_main
+import threading
 
 app = Flask(__name__)
 KNOWN_FACE_DIR = 'known_faces'
@@ -75,4 +77,7 @@ def new_account(name):
     return render_template('new_account.html', name=name)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    voice_thread = threading.Thread(target=voice_main, daemon=True)
+    voice_thread.start()
+
+    app.run(debug=True, use_reloader=False)
