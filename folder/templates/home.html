@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Face Recognition - Get Ready</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    #overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 640px;
+      height: 480px;
+      background-color: rgba(0,0,0,0.7);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      z-index: 10;
+      transition: opacity 0.5s ease;
+    }
+    #container {
+      position: relative;
+      width: 640px;
+      height: 480px;
+      margin: 0 auto;
+      border: 3px solid white;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    video {
+      width: 640px;
+      height: 480px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body class="bg-black text-white flex flex-col items-center justify-center min-h-screen">
+
+  <h1 class="text-4xl mb-8">Face Recognition - Get Ready</h1>
+
+  <div id="container">
+    <video id="video" autoplay muted playsinline></video>
+    <div id="overlay">Get Ready...</div>
+  </div>
+
+  <script>
+    const video = document.getElementById('video');
+    const overlay = document.getElementById('overlay');
+
+    async function startCamera() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        video.srcObject = stream;
+      } catch (err) {
+        alert('Camera access denied or not available.');
+      }
+    }
+
+    startCamera();
+
+    setTimeout(() => {
+      overlay.style.opacity = 0;
+      setTimeout(() => {
+        overlay.style.display = 'none';
+        captureAndSend();
+      }, 500);
+    }, 3000);
+
+    function captureAndSend() {
+      const canvas = document.createElement('canvas');
+      canvas.width = video.videoWidth || 640;
+      canvas.height = video.videoHeight || 480;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+      const dataURL = canvas.toDataURL('image/jpeg');
+
+      fetch('/scan', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ image: dataURL })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if(data.redirect_url){
+          window.location.href = data.redirect_url;
+        } else {
+          alert(data.message || 'No face detected. Please try again.');
+          window.location.reload();
+        }
+      })
+      .catch(err => {
+        alert('Error communicating with server.');
+        console.error(err);
+      });
+    }
+  </script>
+
+</body>
+</html>
