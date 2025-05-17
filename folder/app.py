@@ -23,7 +23,15 @@ def load_known_faces():
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('index.html')
+
+@app.route('/get-started')
+def get_started():
+    return render_template('get-started.html')
+
+@app.route('/demo')
+def demo():
+    return render_template('demo.html')
 
 @app.route('/scan', methods=['POST'])
 def scan_face():

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NAVI - Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3 {
+      background: #ffffff;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans" style="background-image: url('White_Smoke.avif'); background-size: cover; background-position: center;">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/90 border-b border-gray-800 shadow-md px-8 py-4 flex justify-between items-center text-lg font-semibold">
+    <div class="text-white">NAVI</div>
+    <div class="space-x-8">
+        <a href="/" class="text-white hover:text-[#9c9c9c] transition">How It Works</a>
+        <a href="/get-started" class="text-white hover:text-[#9c9c9c] transition">Get Started</a>
+        <a href="/demo" class="text-white hover:text-[#9c9c9c] transition">Demo</a>
+    </div>
+  </nav>
+
+  <!-- Login Section -->
+  <section class="flex items-center justify-center h-screen pt-20 px-4">
+    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-10 shadow-lg max-w-md w-full text-center border border-white/20">
+      <h2 class="text-3xl font-bold mb-6 text-white">Welcome Back</h2>
+      <form class="space-y-5">
+        <input type="text" placeholder="Username" class="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#00c6ff]" />
+        <input type="password" placeholder="Password" class="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#00c6ff]" />
+        <button type="submit" class="w-full bg-gradient-to-r from-[#0071e3] to-[#00c6ff] text-white font-semibold py-3 rounded-full hover:from-[#004bb5] hover:to-[#0071e3] transition-all duration-300">Login</button>
+      </form>
+    </div>
+  </section>
+
+</body>
+</html>
