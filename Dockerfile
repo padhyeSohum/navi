@@ -1,11 +1,9 @@
-# Use a minimal Python image
 FROM python:3.10-slim
 
-# Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# Install system dependencies required to build dlib and PyAudio
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
     cmake \
@@ -16,9 +14,6 @@ RUN apt-get update && apt-get install -y \
     libx11-dev \
     libgtk-3-dev \
     portaudio19-dev \
-    libportaudio2 \
-    libportaudiocpp0 \
-    ffmpeg \
     libsm6 \
     libxext6 \
     libxrender-dev \
@@ -26,24 +21,19 @@ RUN apt-get update && apt-get install -y \
     python3-dev \
     git \
     curl \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Set working directory
 WORKDIR /app
 
-# Copy your code into the container
 COPY . .
 
-# Upgrade pip and install dependencies
 RUN pip install --upgrade pip setuptools wheel
 
-# Optional: Install dlib and PyAudio first (helps isolate issues)
-RUN pip install dlib==19.24.0
-RUN pip install PyAudio==0.2.14
+# Install dlib and PyAudio individually
+RUN pip install dlib==19.24.0 --prefer-binary
+RUN pip install PyAudio==0.2.14 --global-option=build_ext --global-option="-I/usr/include/portaudio19"
 
-# Install the rest of your requirements
-RUN pip install --no-cache-dir -r requirements.txt
+# Now install the rest
+RUN pip install -r requirements.txt
 
-# Start your app (change `main.py` to your entry point)
 CMD ["python", "main.py"]
