@@ -1,88 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NAVI - Our Goal</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>NAVI - Our Goal</title>
+        <script src="https://cdn.tailwindcss.com"></script>
 
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
 
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-   
-    h1, h2, h3 {
-      background: #ffffff;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+            h1,
+            h2,
+            h3 {
+                background: #ffffff;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
 
+            /* Translucent black border with padding and rounded corners */
+            .text-box {
+                border: border-black/50 rounded-xl p-6 mx-auto max-w-3xl
+                    bg-black/30;
+            }
+        </style>
+    </head>
+    <body
+        class="min-h-screen bg-cover bg-center bg-fixed text-white font-sans"
+        style="
+            background-image: url('https://images.unsplash.com/photo-1556388275-bb5585725aca?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        "
+    >
+        <!-- Navbar -->
+        <nav
+            class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/90 border-b border-gray-800 shadow-md px-8 py-4 flex justify-between items-center text-lg font-semibold"
+        >
+            <div class="text-white">NAVI</div>
+            <div class="space-x-8">
+                <a href="/" class="text-white hover:text-[#9c9c9c] transition"
+                    >How It Works</a
+                >
+                <a
+                    href="/our-goal"
+                    class="text-white hover:text-[#9c9c9c] transition"
+                    >Our Goal</a
+                >
+                <a
+                    href="/get-started"
+                    class="text-white hover:text-[#9c9c9c] transition"
+                    >Get Started</a
+                >
+                <a
+                    href="/demo"
+                    class="text-white hover:text-gray-400 transition"
+                    >Demo</a
+                >
+            </div>
+        </nav>
 
-    /* Translucent black border with padding and rounded corners */
-    .text-box {
-        border: border-black/50 rounded-xl p-6 mx-auto max-w-3xl bg-black/30;
-    }
-  </style>
-</head>
-<body class="min-h-screen bg-cover bg-center bg-fixed text-white font-sans" style="background-image: url('https://images.unsplash.com/photo-1556388275-bb5585725aca?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        <!-- Hero Section -->
+        <section class="pt-40 px-6 text-center">
+            <h1 class="text-6xl font-extrabold mb-6">
+                Innovating for a Better Tomorrow
+            </h1>
+            <p
+                class="text-xl text-white/80 max-w-3xl mx-auto bg-black bg-opacity-70 rounded-lg p-4"
+            >
+                Empowering those with limited mobility to live more
+                independently through innovative support and smart solutions.
+            </p>
+            <img
+                src="https://images.unsplash.com/photo-1556401615-c909c3d67480?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Unity"
+                class="rounded-2xl shadow-lg mx-auto mt-10 w-full max-w-3xl"
+            />
+        </section>
 
+        <!-- Our Goal -->
+        <section
+            id="our-goal"
+            class="px-6 py-24 bg-white/5 border-t border-white/10 mt-20"
+        >
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-6">Our Goal</h2>
+                <p
+                    class="text-xl text-white/80 max-w-3xl mx-auto bg-black bg-opacity-70 rounded-lg p-4"
+                >
+                    We aim to create a more accessible world for people with
+                    restricted mobility by allowing users to navigate through a
+                    web page with a simple movement, voice command or both! Our
+                    goal is to empower independence, enhance daily living, and
+                    remove barriers that limit movement and opportunity.
+                </p>
+                <img
+                    src="https://images.unsplash.com/photo-1632646332908-fcfd19d736e5?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Disabilities and Movement illustration"
+                    class="rounded-xl mx-auto shadow-xl mt-10 w-full max-w-3xl"
+                />
+            </div>
+        </section>
 
-  <!-- Navbar -->
-  <nav class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/90 border-b border-gray-800 shadow-md px-8 py-4 flex justify-between items-center text-lg font-semibold">
-    <div class="text-white">NAVI</div>
-    <div class="space-x-8">
-      <a href="index.html" class="text-white hover:text-[#9c9c9c] transition">How It Works</a>
-      <a href="ourGoal.html" class="text-white hover:text-[#9c9c9c] transition">Our Goal</a>
-      <a href="getStarted.html" class="text-white hover:text-[#9c9c9c] transition">Get Started</a>
-      <a href="demo.html" class="text-white hover:text-gray-400 transition">Demo</a>
-    </div>
-  </nav>
+        <!-- Health and Wellness -->
+        <section
+            id="health"
+            class="px-6 py-24 bg-white/5 border-t border-white/10 mt-20"
+        >
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-6">Health and Wellness</h2>
+                <p
+                    class="text-xl text-white/80 max-w-3xl mx-auto bg-black bg-opacity-70 rounded-lg p-4"
+                >
+                    Limited mobility can often lead to muscle strain, stiffness,
+                    or soreness. Our project offers supportive wellness
+                    resources to help improve everyday comfort.
+                </p>
+                <img
+                    src="https://images.unsplash.com/photo-1549890762-0a3f8933bc76?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Disabilities and Movement illustration"
+                    class="rounded-xl mx-auto shadow-xl mt-10 w-full max-w-3xl"
+                />
+            </div>
+        </section>
 
-
-  <!-- Hero Section -->
-  <section class="pt-40 px-6 text-center">
-    <h1 class="text-6xl font-extrabold mb-6">Innovating for a Better Tomorrow</h1>
-    <p class="text-xl text-white/80 max-w-3xl mx-auto bg-black bg-opacity-70 rounded-lg p-4">
-        Empowering those with limited mobility to live more independently through innovative support and smart solutions.
-    </p>
-    <img src="https://images.unsplash.com/photo-1556401615-c909c3d67480?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Unity" class="rounded-2xl shadow-lg mx-auto mt-10 w-full max-w-3xl" />
-  </section>
-
-
-  <!-- Our Goal -->
-  <section id="our-goal" class="px-6 py-24 bg-white/5 border-t border-white/10 mt-20">
-    <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-4xl font-bold mb-6">Our Goal</h2>
-      <p class="text-xl text-white/80 max-w-3xl mx-auto bg-black bg-opacity-70 rounded-lg p-4">
-        We aim to create a more accessible world for people with restricted mobility by allowing users to navigate through a web page with a simple movement, voice command or both! Our goal is to empower independence, enhance daily living, and remove barriers that limit movement and opportunity.
-      </p>
-      <img src="https://images.unsplash.com/photo-1632646332908-fcfd19d736e5?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Disabilities and Movement illustration" class="rounded-xl mx-auto shadow-xl mt-10 w-full max-w-3xl" />
-    </div>
-  </section>
-
-
-  <!-- Health and Wellness -->
-  <section id="health" class="px-6 py-24 bg-white/5 border-t border-white/10 mt-20">
-    <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-4xl font-bold mb-6">Health and Wellness</h2>
-      <p class="text-xl text-white/80 max-w-3xl mx-auto bg-black bg-opacity-70 rounded-lg p-4">
-        Limited mobility can often lead to muscle strain, stiffness, or soreness. Our project offers supportive wellness resources to help improve everyday comfort.
-      </p>
-      <img src="https://images.unsplash.com/photo-1549890762-0a3f8933bc76?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Disabilities and Movement illustration" class="rounded-xl mx-auto shadow-xl mt-10 w-full max-w-3xl" />
-    </div>
-  </section>
-
-
-  <!-- Impact Section -->
-  <section id="impact" class="px-6 py-24 bg-white/5 border-t border-white/10">
-    <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-4xl font-bold mb-8">The Future Starts With Us</h2>
-      <p class="text-xl text-white/80 max-w-3xl mx-auto bg-black bg-opacity-70 rounded-lg p-4">
-        Together, we move forward: one step, one solution, one life improved at a time.
-      </p>
-    </div>
-  </section>
-
-</body>
+        <!-- Impact Section -->
+        <section
+            id="impact"
+            class="px-6 py-24 bg-white/5 border-t border-white/10"
+        >
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-8">
+                    The Future Starts With Us
+                </h2>
+                <p
+                    class="text-xl text-white/80 max-w-3xl mx-auto bg-black bg-opacity-70 rounded-lg p-4"
+                >
+                    Together, we move forward: one step, one solution, one life
+                    improved at a time.
+                </p>
+            </div>
+        </section>
+    </body>
 </html>

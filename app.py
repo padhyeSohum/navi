@@ -35,7 +35,11 @@ def home():
 
 @app.route('/get-started')
 def get_started():
-    return render_template('get-started.html')
+    return render_template('getStarted.html')
+
+@app.route('/our-goal')
+def our_goal():
+    return render_template('ourGoal.html')
 
 @app.route('/demo')
 def demo():
