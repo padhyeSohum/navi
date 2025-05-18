@@ -14,7 +14,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import google.generativeai as genai
 
-app = Flask(__name__)
 KNOWN_FACE_DIR = 'known_faces'
 os.makedirs(KNOWN_FACE_DIR, exist_ok=True)
 
